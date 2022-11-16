@@ -1,4 +1,4 @@
-import 'package:bloc_and_riverpod/domain/events/event.dart';
+import 'package:bloc_and_riverpod/user_registration/domain/events/event.dart';
 
 class GenderChanged extends Event {
   final String value;

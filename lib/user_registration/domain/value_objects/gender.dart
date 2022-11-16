@@ -1,4 +1,4 @@
-import 'package:bloc_and_riverpod/domain/exceptions/gender_invalid.dart';
+import 'package:bloc_and_riverpod/user_registration/domain/exceptions/gender_invalid.dart';
 
 // https://stackoverflow.com/questions/29567236/dart-how-to-get-the-name-of-an-enum-as-a-string
 // https://stackoverflow.com/questions/27673781/enum-from-string#answer-70311579

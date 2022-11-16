@@ -1,5 +1,5 @@
-import 'package:bloc_and_riverpod/domain/exceptions/phone_number_required.dart';
-import 'package:bloc_and_riverpod/domain/exceptions/phone_number_invalid.dart';
+import 'package:bloc_and_riverpod/user_registration/domain/exceptions/phone_number_required.dart';
+import 'package:bloc_and_riverpod/user_registration/domain/exceptions/phone_number_invalid.dart';
 
 class PhoneNumber {
   final String value;

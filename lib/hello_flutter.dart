@@ -1,4 +1,4 @@
-library bloc_and_riverpod;
+library hello_flutter;
 
 export 'user_registration/domain/events/event.dart';
 export 'user_registration/domain/events/name_changed.dart';

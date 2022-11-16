@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bloc_and_riverpod/bloc_and_riverpod.dart';
+import 'package:hello_flutter/hello_flutter.dart';
 
 void main() {
   group('Gender', () {

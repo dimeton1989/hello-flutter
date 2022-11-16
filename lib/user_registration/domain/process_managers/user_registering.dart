@@ -1,17 +1,17 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/events/event.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/events/name_changed.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/events/gender_changed.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/events/phone_number_changed.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/value_objects/gender.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/value_objects/name.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/value_objects/phone_number.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/exceptions/name_required.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/exceptions/name_invalid.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/exceptions/gender_invalid.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/exceptions/phone_number_required.dart';
-import 'package:bloc_and_riverpod/user_registration/domain/exceptions/phone_number_invalid.dart';
+import 'package:hello_flutter/user_registration/domain/events/event.dart';
+import 'package:hello_flutter/user_registration/domain/events/name_changed.dart';
+import 'package:hello_flutter/user_registration/domain/events/gender_changed.dart';
+import 'package:hello_flutter/user_registration/domain/events/phone_number_changed.dart';
+import 'package:hello_flutter/user_registration/domain/value_objects/gender.dart';
+import 'package:hello_flutter/user_registration/domain/value_objects/name.dart';
+import 'package:hello_flutter/user_registration/domain/value_objects/phone_number.dart';
+import 'package:hello_flutter/user_registration/domain/exceptions/name_required.dart';
+import 'package:hello_flutter/user_registration/domain/exceptions/name_invalid.dart';
+import 'package:hello_flutter/user_registration/domain/exceptions/gender_invalid.dart';
+import 'package:hello_flutter/user_registration/domain/exceptions/phone_number_required.dart';
+import 'package:hello_flutter/user_registration/domain/exceptions/phone_number_invalid.dart';
 
 class UserRegistering extends Bloc<Event, Map<String, Exception?>>
     with ChangeNotifier {

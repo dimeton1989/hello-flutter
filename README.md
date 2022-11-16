@@ -1,7 +1,7 @@
 ## 目錄結構
 ```txt
 .
-├── bloc_and_riverpod.dart
+├── hello_flutter.dart
 ├── main.dart
 └── user_registration
     └── domain

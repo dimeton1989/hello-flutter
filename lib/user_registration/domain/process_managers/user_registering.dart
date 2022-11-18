@@ -17,38 +17,34 @@ class UserRegistering extends Bloc<Event, Map<String, Exception?>>
     with ChangeNotifier {
   UserRegistering(super.initialState) {
     on<NameChanged>((event, emit) {
+      // Deep Copy 方法參考[這裡](https://stackoverflow.com/questions/21744480/clone-a-list-map-or-set-in-dart#answer-63768939)
       try {
         Name.fromString(event.value);
-        state['name'] = null;
-      } on NameRequired catch (error) {
-        state['name'] = error;
-        emit(state);
-      } on NameInvalid catch (error) {
-        state['name'] = error;
-        emit(state);
+        emit({...state, 'name': null});
+      } on NameRequired catch (exception) {
+        emit({...state, 'name': exception});
+      } on NameInvalid catch (exception) {
+        emit({...state, 'name': exception});
       }
     });
 
     on<GenderChanged>((event, emit) {
       try {
         Gender.fromString(event.value);
-        state['gender'] = null;
-      } on GenderInvalid catch (error) {
-        state['gender'] = error;
-        emit(state);
+        emit({...state, 'gender': null});
+      } on GenderInvalid catch (exception) {
+        emit({...state, 'gender': exception});
       }
     });
 
     on<PhoneNumberChanged>((event, emit) {
       try {
         PhoneNumber.fromString(event.value);
-        state['phone_number'] = null;
-      } on PhoneNumberRequired catch (error) {
-        state['phone_number'] = error;
-        emit(state);
-      } on PhoneNumberInvalid catch (error) {
-        state['phone_number'] = error;
-        emit(state);
+        emit({...state, 'phone_number': null});
+      } on PhoneNumberRequired catch (exception) {
+        emit({...state, 'phone_number': exception});
+      } on PhoneNumberInvalid catch (exception) {
+        emit({...state, 'phone_number': exception});
       }
     });
   }

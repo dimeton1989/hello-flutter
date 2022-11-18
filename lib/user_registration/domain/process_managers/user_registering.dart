@@ -12,9 +12,11 @@ import 'package:hello_flutter/user_registration/domain/exceptions/name_invalid.d
 import 'package:hello_flutter/user_registration/domain/exceptions/gender_invalid.dart';
 import 'package:hello_flutter/user_registration/domain/exceptions/phone_number_required.dart';
 import 'package:hello_flutter/user_registration/domain/exceptions/phone_number_invalid.dart';
+import 'package:logger/logger.dart';
 
 class UserRegistering extends Bloc<Event, Map<String, Exception?>>
     with ChangeNotifier {
+  final logger = Logger();
   UserRegistering(super.initialState) {
     on<NameChanged>((event, emit) {
       // Deep Copy 方法參考[這裡](https://stackoverflow.com/questions/21744480/clone-a-list-map-or-set-in-dart#answer-63768939)
@@ -25,6 +27,9 @@ class UserRegistering extends Bloc<Event, Map<String, Exception?>>
         emit({...state, 'name': exception});
       } on NameInvalid catch (exception) {
         emit({...state, 'name': exception});
+      } catch (error) {
+        logger.e(error);
+        rethrow;
       }
     });
 
@@ -34,6 +39,9 @@ class UserRegistering extends Bloc<Event, Map<String, Exception?>>
         emit({...state, 'gender': null});
       } on GenderInvalid catch (exception) {
         emit({...state, 'gender': exception});
+      } catch (error) {
+        logger.e(error);
+        rethrow;
       }
     });
 
@@ -45,6 +53,9 @@ class UserRegistering extends Bloc<Event, Map<String, Exception?>>
         emit({...state, 'phone_number': exception});
       } on PhoneNumberInvalid catch (exception) {
         emit({...state, 'phone_number': exception});
+      } catch (error) {
+        logger.e(error);
+        rethrow;
       }
     });
   }
